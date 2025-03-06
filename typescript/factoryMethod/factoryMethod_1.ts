@@ -1,13 +1,49 @@
 /**
  * =====================================================================
- * 🌟 TypeScript Singleton Example 🌟
- * --------------------------------------------------------
- * This module demonstrates how to create a Singleton
- * pattern in TypeScript using a static instance.
+ * 🌟 TypeScript Factory Method Pattern Example 🌟
+ * ---------------------------------------------------------------------
+ * 📝 **Overview**:
+ *    This implementation follows the **Factory Method Pattern** to
+ *    create different file editor instances (`JsonFile`, `XmlFile`)
+ *    based on the provided file type.
  *
- * 👨‍💻 Author: Your Name
- * 📅 Date: YYYY-MM-DD
- * 🚀 Purpose: Maintain a single instance across the app.
+ * 🚀 **Purpose**:
+ *    - Encapsulate object creation logic in factory classes.
+ *    - Ensure that each file type gets the appropriate editor.
+ *    - Maintain **scalability** by making it easy to add new file types.
+ *
+ * 🏗 **Architecture**:
+ *    1️⃣ `IFile` (Interface): Defines a file with `name()` and `type()`.
+ *    2️⃣ `IFileEditor` (Interface): Ensures each file editor has an `edit()` method.
+ *    3️⃣ `BaseFactoryFile` (Abstract Class): Defines a **template method** for file creation.
+ *    4️⃣ `JsonFile` & `XmlFile` (Concrete Factories): Implement the `make()` method to return
+ *        a specific file editor (`Json` or `Xml`).
+ *    5️⃣ `Json` & `Xml` (Concrete Products): Provide the `edit()` implementation.
+ *
+ * 🔄 **How It Works**:
+ *    - The **client** provides a file and its format (e.g., `"json"` or `"xml"`).
+ *    - The corresponding factory class (`JsonFile` or `XmlFile`) is selected.
+ *    - The `callEdit()` method invokes `make()` to create the correct editor instance.
+ *    - The `edit()` method is called to process the file.
+ *
+ * 📝 **Example Usage**:
+ * ```typescript
+ *  const file: FactoryMethodPattern.IFile = {
+ *    name: () => "data.json",
+ *    type: () => "json",
+ *  };
+ *
+ *  const editor = new FactoryMethodPattern.JsonFile(file);
+ *  editor.callEdit().then(console.log);
+ *  ➡️ Output: "Editing JSON file: data.json"
+ * ```
+ *
+ * 🏆 **Benefits of Factory Method Pattern**:
+ *    ✅ Provides flexibility in object creation.
+ *    ✅ Makes the code **extensible** (easy to add new file types).
+ *    ✅ Promotes **separation of concerns** by delegating instantiation.
+ *
+ * 🌍 **Language**: TypeScript
  * =====================================================================
  */
 

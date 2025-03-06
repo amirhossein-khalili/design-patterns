@@ -2,11 +2,9 @@
  * =====================================================================
  * 🌟 TypeScript Singleton Example 🌟
  * --------------------------------------------------------
- * This module demonstrates how to create a Singleton
+ * 📝 Explain: This module demonstrates how to create a Singleton
  * pattern in TypeScript using a static instance.
  *
- * 👨‍💻 Author: Your Name
- * 📅 Date: YYYY-MM-DD
  * 🚀 Purpose: Maintain a single instance across the app.
  * =====================================================================
  */
