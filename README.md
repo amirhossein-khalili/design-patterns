@@ -1,4 +1,3 @@
-Here's your **fixed and improved** `README.md` file with better formatting, consistency, and clarity.
 
 ---
 
